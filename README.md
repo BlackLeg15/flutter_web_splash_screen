@@ -52,11 +52,11 @@ Um projeto para validar Splash Screens e Gerência de estado no Flutter Web
 ### 1.6 Navegação
 - pacote <i>go_router</i>
 
-## 2 Project specs
+## 2 Especificações do projeto
 - Dart 2.19.0
 - Flutter 3.7.0
 
-## 3 Lessons learned
+## 3 Lições aprendidas
 - Splash Screen no Flutter Web
 - Manutenção de estado no Flutter Web
 - Navegação com <i>go_router</i> no Flutter Web
