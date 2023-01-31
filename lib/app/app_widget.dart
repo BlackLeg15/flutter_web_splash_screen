@@ -20,6 +20,7 @@ class AppWidget extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       routerConfig: _router,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
