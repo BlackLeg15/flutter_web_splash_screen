@@ -1,3 +1,4 @@
+import 'package:flutter_web_splash_screen/app/core/interfaces/http_client/http_exception.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
 import '../errors/user_errors.dart';
@@ -17,6 +18,8 @@ class ListRemoveUsersCubit extends HydratedCubit<ListRemoveUsersState> {
       final result = await usersRepository.getUsers(id: id);
       emit(state.copyWith(isLoading: false, users: result));
     } on UserError catch (e) {
+      emit(state.copyWith(error: e.message));
+    } on HttpException catch (e) {
       emit(state.copyWith(error: e.message));
     }
   }

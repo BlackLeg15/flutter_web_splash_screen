@@ -1,4 +1,4 @@
-import 'package:flutter_web_splash_screen/app/modules/user/errors/user_errors.dart';
+import '../errors/user_errors.dart';
 
 class UserModel {
   final String id;
@@ -22,7 +22,7 @@ class UserModel {
 
   factory UserModel.fromMap(dynamic map) {
     if (map is! Map || map.isEmpty) {
-      throw const UserMissingAttribute('all');
+      throw const UserDataIsUnavailable();
     }
     final id = map['id'];
     if (id is! String || id.isEmpty) {
