@@ -28,28 +28,29 @@ class AppWidget extends StatelessWidget {
 final _router = GoRouter(
   routes: [
     GoRoute(
-        path: '/',
-        name: 'User Menu Page',
-        builder: (context, state) {
-          initUserScopeDependencies();
-          return const UserMenuPage();
-        },
-        routes: [
-          GoRoute(
-            path: 'list',
-            builder: (context, state) {
-              GetIt.I.registerSingleton(ListRemoveUsersCubit(GetIt.I()));
-              return const ListRemoveUsersPage();
-            },
-          ),
-          GoRoute(
-            path: 'add',
-            builder: (context, state) {
-              //TODO(adbysantos): Create a page for adding users
-              return const SizedBox();
-            },
-          ),
-        ]),
+      path: '/',
+      name: 'User Menu Page',
+      builder: (context, state) {
+        initUserScopeDependencies();
+        return const UserMenuPage();
+      },
+      routes: [
+        GoRoute(
+          path: 'list',
+          builder: (context, state) {
+            GetIt.I.registerSingleton(ListRemoveUsersCubit(GetIt.I()));
+            return const ListRemoveUsersPage();
+          },
+        ),
+        GoRoute(
+          path: 'add',
+          builder: (context, state) {
+            // TODO(adbysantos): Create a page for adding users
+            return const SizedBox();
+          },
+        ),
+      ],
+    ),
   ],
 );
 

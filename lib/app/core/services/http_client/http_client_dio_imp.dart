@@ -15,7 +15,7 @@ class HttpClientDioImp implements HttpClient {
       final result = await dioClient.get(url, queryParameters: params);
       return HttpResponse(data: result.data);
     } on DioError catch (e) {
-      throw HttpException(message: e.message, statusCode: e.response?.statusCode ?? 404);
+      throw HttpException(message: e.message ?? '', statusCode: e.response?.statusCode ?? 404);
     }
   }
 
@@ -25,7 +25,7 @@ class HttpClientDioImp implements HttpClient {
       final result = await dioClient.post(url, data: data);
       return HttpResponse(data: result.data);
     } on DioError catch (e) {
-      throw HttpException(message: e.message, statusCode: e.response?.statusCode ?? 404);
+      throw HttpException(message: e.message ?? '', statusCode: e.response?.statusCode ?? 404);
     }
   }
 }
